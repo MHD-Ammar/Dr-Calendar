@@ -4,28 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>signin</title>
-    <link rel="stylesheet" href="static/style.css">
-    <link rel="stylesheet" href="static/style.css">
+    <title>Dr Calendar</title>
+    <link rel="stylesheet" href="../static/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="signin-div">
-        <form class="signin-form w-100">
-            <div class="form-group">
-                <label>Enter Your name</label>
-                <input type="text" class="form-control" placeholder="Enter your name">
+    <div class="card-container">
+        {% for item in message %}
+        <div class="card text-center">
+            <div class="card-header">
+                {{item["id"]}}
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Phone</label>
-                <input type="phone" class="form-control" placeholder="Phone">
+            <div class="card-body">
+                <h5 class="card-title">{{item["name"]}}</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a class="btn btn-primary completed">completed</a>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
 
+        </div>
+        {% endfor %}
+    </div>
 
 
 
@@ -39,8 +39,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="static/script.js"> </script>
-
+    <script src="../static/script.js"> </script>
 </body>
 
 </html>
